@@ -6,7 +6,14 @@ ctrlReservas.renderListadoreservas = (req, res) => {
     res.render('index')
 }
 
+ctrlReservas.renderCrearReservas = (req, res) => {
+    res.render('crear-reserva')
+}
 
+
+ctrlReservas.renderEditarReservas = (req, res) => {
+    res.render('editar-reserva')
+}
 
 // ==========================================
 //         Rutas para CRUD de reservas
