@@ -12,7 +12,8 @@ ctrlReservas.renderCrearReservas = (req, res) => {
 
 
 ctrlReservas.renderEditarReservas = (req, res) => {
-    res.render('editar-reserva')
+    const { id } = req.params;
+    res.render('editar-reserva', { id })
 }
 
 // ==========================================

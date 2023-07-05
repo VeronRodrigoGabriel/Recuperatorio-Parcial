@@ -12,16 +12,16 @@ router.get('/', renderListadoreservas)
 // Formulario para crear una reserva
 router.get('/crear-reserva', renderCrearReservas)
 // Formulario para actualizar una reserva
-router.get('/editar-reserva', renderEditarReservas)
+router.get('/editar-reserva/:id', renderEditarReservas)
 // ==========================================
 //         Rutas para CRUD de reservas
 // ==========================================
 
 // Obtener todas las reservas
-router.get('/api/', ObtenerReservas);
+router.get('/api', ObtenerReservas);
 
 // Crear una reserva
-router.post('/api/', CrearReserva);
+router.post('/api', CrearReserva);
 
 // Actualizar una reserva
 router.put('/api/:id', editarReserva);
