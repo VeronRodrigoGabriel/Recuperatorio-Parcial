@@ -10,6 +10,15 @@ require('ejs')
 
 const app = express();
 
+
+const { sequelize } = require("./database")
+sequelize.authenticate()
+    .then(() => console.log("Base de datos  conectada"))
+    .catch((error) => {
+        console.log(error);
+        process.exit()
+    });
+
 // Middlewares
 // TODO: Implementar middlewares
 app.use(cors())
