@@ -1,20 +1,39 @@
 // Imports
+require('dotenv').config()
 const cors = require('cors');
 const express = require('express');
-
+const morgan = require('morgan');
+const helmet = require('helmet')
 const path = require('path');
+require('ejs')
+
 
 const app = express();
 
 // Middlewares
 // TODO: Implementar middlewares
+app.use(cors())
+app.use(morgan('dev'))
+// app. use(helmet())
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+app.set("view engine", "ejs")
+
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
-app.use('/api', require('./routes/reserva.routes'));
+app.use(require('./routes/reserva.routes'));
 
 // TODO: Si la petición no coincide con ninguna de las rutas declaradas, mostrar error 404
+app.use((req, res, next) => {
+    return res.status(404).render("404.ejs")
 
+})
+
+
+
+const PORT = process.env.PORT || 4000
 // Starting the server
-app.listen(45635, () => console.log('Server on port xxxx'));
+app.listen(PORT, () => console.log('Server on port', PORT));
