@@ -8,6 +8,7 @@ formCrearReserva.addEventListener('submit', async (e) => {
     const pais = document.querySelector('#pais').value;
     const ciudad = document.querySelector('#ciudad').value;
     const fecha_vuelo = document.querySelector('#fecha_vuelo').value;
+    const precio = document.querySelector('#precio').value;
     const telefono = document.querySelector('#telefono').value;
     const email = document.querySelector('#email').value;
 
@@ -17,6 +18,7 @@ formCrearReserva.addEventListener('submit', async (e) => {
         nombre,
         apellido,
         pais,
+        precio,
         ciudad,
         fecha_vuelo,
         telefono,

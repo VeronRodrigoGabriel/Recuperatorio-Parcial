@@ -19,6 +19,7 @@ const mostrarReservas = (reservas, tablaElement) => {
             <td>${reserva.fecha_vuelo}</td>
             <td>${reserva.pais}</td>
             <td>${reserva.ciudad}</td>
+            <td>${reserva.precio}</td>
             <td>${reserva.telefono}</td>
             <td>${reserva.email}</td>
             <td>

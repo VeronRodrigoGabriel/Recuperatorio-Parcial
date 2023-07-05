@@ -8,6 +8,7 @@ const ciudad = document.querySelector('#ciudad');
 const fecha_vuelo = document.querySelector('#fecha_vuelo');
 const telefono = document.querySelector('#telefono');
 const email = document.querySelector('#email');
+const precio = document.querySelector('#precio');
 
 
 
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
     nombre.value = data.nombre;
+    precio.value = data.precio;
     apellido.value = data.apellido;
     pais.value = data.pais;
     ciudad.value = data.ciudad;
@@ -39,7 +41,8 @@ formReserva.addEventListener('submit', async (e) => {
         pais: pais.value,
         ciudad: ciudad.value,
         telefono: telefono.value,
-        emai: email.value
+        emai: email.value,
+        precio: precio.value
     }
 
 
